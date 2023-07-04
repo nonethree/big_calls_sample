@@ -19,7 +19,7 @@ export function EngineViewer(){
        
         const [isOnboarding, setOnboarding] = useState(true);
         const loadingPercentage = Math.round(loadingProgression * 100);
-        
+        const [, setCameraAllowed] = useState(false);
 
 
         const handleStartEngine = useCallback(()=>{
