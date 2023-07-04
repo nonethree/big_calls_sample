@@ -8,7 +8,7 @@ let mindArController = null;
 
 
 export function EngineViewer(){
-    const { unityProvider, addEventListener, removeEventListener, sendMessage, loadingProgression } =
+    const { unityProvider, addEventListener, removeEventListener, sendMessage, loadingProgression, isLoaded } =
         useUnityContext({
             loaderUrl: "./engine/BigCalls.loader.js",
             dataUrl: "./engine/BigCalls.data",
@@ -19,12 +19,12 @@ export function EngineViewer(){
        
         const [isOnboarding, setOnboarding] = useState(true);
         const loadingPercentage = Math.round(loadingProgression * 100);
-        const [, setCameraAllowed] = useState(false);
+        const [isCameraAllowed, setCameraAllowed] = useState(false);
 
 
         const handleStartEngine = useCallback(()=>{
             setOnboarding(false);
-        },[]);        
+        });        
 
 
         window.onDetected = (index) => {
