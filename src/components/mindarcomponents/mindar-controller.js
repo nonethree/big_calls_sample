@@ -39,6 +39,8 @@ export class MindARReact{
             this.controller = new Controller({
                 inputWidth: this.video.videoWidth,
                 inputHeight: this.video.videoHeight,
+                warmupTolerance: 1,
+                missTolerance: 20,
                 onUpdate: (data) => {
                     if(data.type === 'updateMatrix'){
                         const { targetIndex, worldMatrix } = data;
